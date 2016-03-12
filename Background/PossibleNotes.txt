@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+function myFunction() {
+    var x = Math.floor((Math.random() * 4) + 1);
+    //document.getElementById("myCanvas").innerHTML = x;
+    return x;
+}
+var testNumber =  myFunction();
+
+
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+
+
+if( testNumber == 1){
+		ctx.arc(100, 75, 5, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.moveTo(95, 75 );
+		ctx.lineTo(95,95 );
+		ctx.stroke();
+}
+
+else if( testNumber == 2) {
+		ctx.arc(100, 75, 5, 0, 2 * Math.PI);
+		ctx.stroke();
+		ctx.moveTo(95, 75 );
+		ctx.lineTo(95,95 );
+		ctx.stroke();
+}
+
+else if( testNumber == 3) {
+		ctx.arc(100, 75, 5, 0, 2 * Math.PI);
+		ctx.fill();
+    ctx.arc(108, 75, 2, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.moveTo(95, 75 );
+		ctx.lineTo(95,95 );
+    ctx.stroke();
+}
+
+else if( testNumber == 4) {
+		ctx.arc(100, 75, 5, 0, 2 * Math.PI);
+		ctx.stroke();
+}
+</script> 
+
+</body>
