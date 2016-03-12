@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<canvas id="myCanvas" width="500" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+for(k = 0; k < 10; k++) {
+	var cMajorNotes = [1, 2, 3, 4, 5, 6, 7, 8];
+	var possibleNoteDurations = [1, 2, 3, 4];
+	Notation = []
+	Notation.push(cMajorNotes[Math.floor(Math.random() * (cMajorNotes.length))]);
+	Notation.push(possibleNoteDurations[Math.floor(Math.random() * (possibleNoteDurations.length))]);
+	document.getElementById("demo").innerHTML = Notation;
+
+	//Lines 20-50 make plot
+	var testNumber =  Notation[1];
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	if( testNumber == 1){
+		ctx.arc(100+k*20, 75, 5, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.moveTo(95+k*20, 75 );
+		ctx.lineTo(95+k*20,95 );
+		ctx.stroke();
+	}
+	else if( testNumber == 2) {
+		ctx.arc(100+k*20, 75, 5, 0, 2 * Math.PI);
+		ctx.stroke();
+		ctx.moveTo(95+k*20, 75 );
+		ctx.lineTo(95+k*20,95 );
+		ctx.stroke();
+	}
+	else if( testNumber == 3) {
+		ctx.arc(100+k*20, 75, 5, 0, 2 * Math.PI);
+		ctx.fill();
+    ctx.arc(108+k*20, 75, 2, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.moveTo(95+k*20, 75 );
+		ctx.lineTo(95+k*20,95 );
+    ctx.stroke();
+	}
+	else if( testNumber == 4) {
+		ctx.arc(100+k*20, 75, 5, 0, 2 * Math.PI);
+		ctx.stroke();
+	}
+}
+</script> 
+
+</body>
