@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <!-- start of bootsrap imports -->
+  <title>MirrorScore</title>
+	<!-- Latest compiled and minified CSS bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/stickyFooter.css";
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!--Tone.js Library -->
+	<script type="text/javascript" src="http://cdn.tonejs.org/latest/Tone.js"></script>
+		<!-- end of bootsrap imports -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  </head>
+  <body>
+	<div class="container" align="center">
+	<img class="img-responsive" src="sources/MirrorScore.jpg"  width="83%" align="center" height="20%" position="relative">
+	<h1>Welcome to MirrorScore</h1>
+	<p>Translate any audio file into readable sheet music</p>
+	<div class="well well-small">
+	<span class="btn btn-default btn-file">
+		<input id="audio_file" type="file" accept="audio/*" /></input>
+	</span>
+	<br>
+	<br>
+	<audio controls id="audio_player">
+		Audio display is not available
+	</audio>
+	
+	</div>
+	<script>
+		audio_file.onchange = function(){
+			var files = this.files;
+			var file = URL.createObjectURL(files[0]); 
+					audio_player.src = file;
+			toneAnalyser();
+		};
+		function toneAnalyser() {
+			var fft = new Tone.Analyser(128, "fft");
+			function loop(){
+				var fftValues = fft.analyse();
+			}
+			loop();
+		}
+		
+	</script>
+	</div>
+  </body>
+	<footer class="footer" align="center">
+			<div class="container">
+				<p class="text-muted">&copy Spring eHacks Edwardsville 2016, Team MirrorScore</p>
+			</div>
+	</footer>
+</html>
