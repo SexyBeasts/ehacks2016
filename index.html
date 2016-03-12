@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <!-- start of bootsrap imports -->
+  <title>Mirror Score</title>
+	  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<!-- end of bootsrap imports -->
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+  </head>
+  <body>
+	<div class="container">
+	<h1>Welcome to Mirror Score</h1>
+	<p>Do some stuff</p> 
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#button').click(function() {
+            // run an AJAX get request to the route you setup above...
+            // respect the cross-domain policy by using the same domain
+            // you used to access your index.html file!
+            $.get('http://www.yoursite.com/request', function(list) {
+                $('#response').html(list); // show the list
+            });
+        });
+    });
+	<script src="scripts/MusicReader.js"></script>
+  </body>
+</html>
