@@ -9,11 +9,11 @@ The MirrorScore folder is the actual Flask framework that the software is based 
 # What is in this repo?
 A web based application that allows a user to upload a monaural(mono) channel .wav file for sheet music conversion
 
-app/templates contains the html\n
+*app/templates* contains the **html**
 
-app/static contains all other resources (CSS/JavaScript/resources)
+*app/static* contains all other resources (**CSS/JavaScript/resources**)
 
-HertzReader.py contains the analysis algorithm for the file
+**HertzReader.py** contains the analysis algorithm for the file
 
 #How can I help this repo?
 
