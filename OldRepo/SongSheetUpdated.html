@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<p id="demo"></p>
+
+			<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+				<script>
+				/*
+				var fileref=document.createElement('script')
+				fileref.setAttrbute("type","text/javascript")
+				fileref.setAttrbute("src", "output.json")
+				*/
+				for(k = 0; k < 10; k++) {
+					
+					var quart = 25;
+					var half = 50;
+					var threeFourths = 75;
+					
+					var range = Math.floor((Math.random() * 100) + 1);
+					
+					var cMajorNotes = [0, 1, 2, 3, 4, 5, 6, 7];
+					var possibleNoteDurations = [1, 2, 3, 4];
+					Notation = []
+					Notation.push(cMajorNotes[Math.floor(Math.random() * (cMajorNotes.length))]);
+					//Notation.push(possibleNoteDurations[Math.floor(Math.random() * (possibleNoteDurations.length))]);
+					//document.getElementById("demo").innerHTML = Notation;
+					var height = Notation[0]; //the height of the note
+					//Lines 20-50 make plot
+					//var testNumber =  Notation[1];
+					var c = document.getElementById("myCanvas");
+					var ctx = c.getContext("2d");
+					ctx.beginPath();
+					if( range <= quart){//quarter
+						ctx.arc(15+k*20, 20 + height*5, 5, 0, 2 * Math.PI);
+						ctx.fill();
+						ctx.moveTo(10+k*20, 20 + height*5 );
+						ctx.lineTo(10+k*20,40  + height*5);
+						ctx.stroke();
+					}
+					else if( range > quart && range <= half) {//half
+						ctx.arc(15+k*20, 20 + height*5, 5, 0, 2 * Math.PI);
+						ctx.stroke();
+						ctx.moveTo(10+k*20, 20  + height*5);
+						ctx.lineTo(10+k*20,40  + height*5);
+						ctx.stroke();
+					}
+					else if( range > half && range <= threeFourths) {//half + quarter
+						ctx.arc(15+k*20, 20 + height*5, 5, 0, 2 * Math.PI);
+						ctx.stroke();
+					ctx.arc(23+k*20, 20 + height*5, 2, 0, 2 * Math.PI);
+						ctx.stroke();
+						ctx.moveTo(10+k*20, 20 + height*5 );
+						ctx.lineTo(10+k*20,40 + height*5 );
+					ctx.stroke();
+					}
+					else if( range > threeFourths) {//whole note
+						ctx.arc(15+k*20, 20 + height*5, 5, 0, 2 * Math.PI);
+						ctx.stroke();
+					}
+				}
+				var c = document.getElementById("myCanvas");
+				var ctx = c.getContext("2d");
+				ctx.beginPath();
+
+				for (j = 0; j < 5; j++) {
+					for (i = 0; i < 5; i++) {
+						ctx.moveTo(5, 20 + 10*i + 80*j );
+						ctx.lineTo(205, 20+ 10*i + 80*j);
+					ctx.stroke();
+					}
+				}
+
+				</script> 
+	</body>
+</html>
